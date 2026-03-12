@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Preview &mdash; Four Seasons Roofing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+/* === RESET & BASE === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:       #08111e;
+    --bg2:      #0d1a2a;
+    --bg3:      #112035;
+    --teal:     #2dd4bf;
+    --teal-dim: rgba(45, 212, 191, 0.12);
+    --navy:     #1a3a52;
+    --white:    #ffffff;
+    --muted:    rgba(255, 255, 255, 0.52);
+    --border:   rgba(255, 255, 255, 0.09);
+    --glass:    rgba(255, 255, 255, 0.04);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* === AURORA BACKGROUND === */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 65% 55% at 12% 38%, rgba(45, 212, 191, 0.09) 0%, transparent 62%),
+        radial-gradient(ellipse 55% 45% at 88% 62%, rgba(26, 58, 82, 0.28) 0%, transparent 62%),
+        radial-gradient(ellipse 40% 35% at 50% 8%,  rgba(45, 212, 191, 0.05) 0%, transparent 62%);
+    animation: auroraShift 22s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes auroraShift {
+    0%   { opacity: 1;   transform: scale(1);    }
+    100% { opacity: 0.7; transform: scale(1.06); }
+}
+
+.page-wrap { position: relative; z-index: 1; }
+
+/* === 48HR BANNER === */
+.reservation-banner {
+    background: rgba(45, 212, 191, 0.09);
+    border-bottom: 1px solid rgba(45, 212, 191, 0.22);
+    padding: 9px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 0.15px;
+}
+
+.reservation-banner strong { color: #ffffff; }
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulseDot 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.45); }
+    50%       { opacity: 0.7; box-shadow: 0 0 0 7px rgba(45, 212, 191, 0); }
+}
+
+/* === AGENCY HEADER === */
+.agency-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(8, 17, 30, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.agency-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.agency-logo-mark {
+    width: 33px;
+    height: 33px;
+    background: var(--teal);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--bg);
+    letter-spacing: -0.4px;
+    flex-shrink: 0;
+}
+
+.agency-logo-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    letter-spacing: -0.2px;
+}
+
+.header-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.header-label span {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.header-cta {
+    background: var(--teal);
+    color: var(--bg);
+    border: none;
+    padding: 9px 20px;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.header-cta:hover { opacity: 0.86; transform: translateY(-1px); }
+
+/* === INTRO SECTION === */
+.intro-section {
+    text-align: center;
+    padding: 68px 24px 52px;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.intro-tag {
+    display: inline-block;
+    background: var(--teal-dim);
+    border: 1px solid rgba(45, 212, 191, 0.28);
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+}
+
+.intro-headline {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+    margin-bottom: 18px;
+}
+
+.intro-headline em {
+    font-style: normal;
+    color: var(--teal);
+}
+
+.intro-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto 32px;
+    line-height: 1.75;
+}
+
+.intro-view-link {
+    color: var(--teal);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(45, 212, 191, 0.38);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease;
+}
+
+.intro-view-link:hover { border-color: var(--teal); }
+
+/* === DEVICE TOGGLE === */
+.device-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 24px;
+}
+
+.device-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--glass);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    font-family: inherit;
+}
+
+.device-btn:hover { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.18); }
+
+.device-btn.active {
+    background: var(--teal-dim);
+    border-color: rgba(45, 212, 191, 0.38);
+    color: var(--teal);
+}
+
+.device-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* === BROWSER CHROME + IFRAME === */
+.demo-wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px 72px;
+}
+
+.browser-chrome {
+    background: #16222f;
+    border-radius: 12px 12px 0 0;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-bottom: none;
+}
+
+.traffic-lights {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.tl            { width: 11px; height: 11px; border-radius: 50%; }
+.tl-red        { background: #ff5f56; }
+.tl-yellow     { background: #ffbd2e; }
+.tl-green      { background: #27c93f; }
+
+.url-bar {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.url-bar svg   { width: 11px; height: 11px; opacity: 0.55; flex-shrink: 0; }
+.url-bar span  { color: rgba(255,255,255,0.65); font-weight: 500; }
+
+.browser-shell {
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.browser-shell.mobile-view {
+    background: #0c1926;
+    padding: 24px 0 32px;
+}
+
+.demo-iframe {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 900px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.browser-shell.mobile-view .demo-iframe {
+    width: 390px;
+    height: 812px;
+    border-radius: 40px;
+    box-shadow:
+        0 0 0 10px #1e2d3f,
+        0 0 0 12px #243347,
+        0 50px 100px rgba(0,0,0,0.65);
+}
+
+/* === IMPROVEMENTS SECTION === */
+.improvements-section {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+}
+
+.section-label {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-label h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+}
+
+.section-label p {
+    font-size: 15px;
+    color: var(--muted);
+}
+
+.improvements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 14px;
+}
+
+.improvement-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.improvement-card:hover {
+    background: var(--teal-dim);
+    transform: translateX(4px);
+}
+
+.improvement-check {
+    font-size: 15px;
+    color: var(--teal);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+    line-height: 1;
+}
+
+.improvement-card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.65;
+}
+
+/* === TRUST STRIP === */
+.trust-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 22px 32px;
+    text-align: center;
+    background: rgba(255,255,255,0.015);
+}
+
+.trust-strip p {
+    font-size: 13.5px;
+    color: var(--muted);
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* === CTA SECTION === */
+.cta-section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 72px 32px 88px;
+    text-align: center;
+}
+
+.cta-headline {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    margin-bottom: 36px;
+}
+
+.pricing-block {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 32px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.pricing-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal);
+}
+
+.pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 15px;
+}
+
+.pricing-row + .pricing-row {
+    border-top: 1px solid var(--border);
+}
+
+.pricing-row .label { color: var(--muted); }
+
+.pricing-row .value {
+    font-weight: 700;
+    color: var(--white);
+    font-size: 20px;
+}
+
+.pricing-row .value small {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 2px;
+}
+
+.pricing-total {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(45, 212, 191, 0.22);
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.btn-claim {
+    display: block;
+    width: 100%;
+    background: var(--teal);
+    color: var(--bg);
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 22px;
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 32px rgba(45, 212, 191, 0.22);
+    letter-spacing: 0.1px;
+}
+
+.btn-claim:hover {
+    opacity: 0.86;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 44px rgba(45, 212, 191, 0.36);
+}
+
+.btn-claim:active { transform: scale(0.98); box-shadow: none; }
+
+/* === TRUST BADGES === */
+.trust-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.badge svg { width: 13px; height: 13px; color: var(--teal); flex-shrink: 0; }
+
+.setup-note {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* === FOOTER === */
+.page-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: rgba(0,0,0,0.15);
+}
+
+.footer-copy { font-size: 12px; color: var(--muted); }
+
+.footer-link {
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover { color: var(--teal); }
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .improvements-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .agency-header { padding: 14px 20px; }
+    .header-label  { display: none; }
+    .intro-headline { font-size: 26px; }
+    .demo-wrapper    { padding: 0 16px 52px; }
+    .improvements-section { padding: 0 16px 60px; }
+    .cta-section    { padding: 52px 20px 64px; }
+    .cta-headline   { font-size: 24px; }
+    .pricing-block  { padding: 22px 20px; }
+    .page-footer    { flex-direction: column; align-items: center; text-align: center; padding: 20px 24px; }
+    .trust-badges   { gap: 14px; }
+    .browser-shell.mobile-view { padding: 16px 0 24px; }
+    .browser-shell.mobile-view .demo-iframe { width: 320px; height: 680px; }
+}
+
+@media (max-width: 480px) {
+    .reservation-banner { font-size: 12px; padding: 9px 16px; }
+    .device-btn span    { display: none; }
+    .device-btn         { padding: 8px 14px; }
+}
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 48hr Reservation Banner -->
+    <div class="reservation-banner">
+        <div class="pulse-dot"></div>
+        <span>This preview is reserved for <strong>Four Seasons Roofing</strong> &mdash; available for the next 48 hours</span>
+    </div>
+
+    <!-- Agency Header -->
+    <header class="agency-header">
+        <div class="agency-logo">
+            <div class="agency-logo-mark">LM</div>
+            <span class="agency-logo-name">Luxedmedia</span>
+        </div>
+        <span class="header-label">Live Preview &mdash; <span>Four Seasons Roofing</span></span>
+        <a href="https://buy.stripe.com/eVq28r1kw2jfaxzatH2Nq00" target="_blank" rel="noopener noreferrer" class="header-cta">Claim This Site</a>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="intro-tag">Custom Website Preview</div>
+        <h1 class="intro-headline">
+            A preview website was created<br>for <em>Four Seasons Roofing</em>
+        </h1>
+        <p class="intro-sub">
+            We built this fully responsive, agency-quality website using information from your current online presence.
+            It&rsquo;s live right now &mdash; scroll through it below.
+        </p>
+        <a href="./index.html" target="_blank" class="intro-view-link">Open in full screen &rarr;</a>
+    </section>
+
+    <!-- Device Toggle -->
+    <div class="device-toggle">
+        <button class="device-btn active" onclick="setView('desktop')" id="btn-desktop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+            </svg>
+            <span>Desktop</span>
+        </button>
+        <button class="device-btn" onclick="setView('mobile')" id="btn-mobile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <circle cx="12" cy="18" r="1"/>
+            </svg>
+            <span>Mobile</span>
+        </button>
+    </div>
+
+    <!-- Browser Chrome + Demo iFrame -->
+    <div class="demo-wrapper">
+        <div class="browser-chrome">
+            <div class="traffic-lights">
+                <div class="tl tl-red"></div>
+                <div class="tl tl-yellow"></div>
+                <div class="tl tl-green"></div>
+            </div>
+            <div class="url-bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <span>yoursite.com</span>
+            </div>
+        </div>
+        <div class="browser-shell" id="browser-shell">
+            <iframe
+                src="http://localhost:9999/demos/bot1/four-seasons-roofing-v2/index.html"
+                class="demo-iframe"
+                id="demo-iframe"
+                title="Four Seasons Roofing Demo Website"
+                scrolling="yes"
+                allow="fullscreen"
+            ></iframe>
+        </div>
+    </div>
+
+    <!-- Improvements Section -->
+    <section class="improvements-section">
+        <div class="section-label">
+            <h2>What&rsquo;s built into this version</h2>
+            <p>Specific design choices made to increase calls and inquiries from your market</p>
+        </div>
+        <div class="improvements-grid">
+            <div class="improvement-card"><div class="improvement-check">✓</div><p>Professional, modern design that builds trust and credibility with your target market</p></div>
+            <div class="improvement-card"><div class="improvement-check">✓</div><p>Mobile-responsive on all devices with optimal viewing experience</p></div>
+            <div class="improvement-card"><div class="improvement-check">✓</div><p>Clear service sections and portfolio showcasing your best work</p></div>
+            <div class="improvement-card"><div class="improvement-check">✓</div><p>Customer testimonials and reviews prominently featured</p></div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+        <p>This website was built using information already available about Four Seasons Roofing. All content can be adjusted &mdash; services, credentials, photos, and copy &mdash; at no additional charge during setup.</p>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-headline">Want this transferred to your current domain?</h2>
+
+        <div class="pricing-block">
+            <div class="pricing-row">
+                <span class="label">One-time setup fee</span>
+                <span class="value">$800</span>
+            </div>
+            <div class="pricing-row">
+                <span class="label">Monthly optimization</span>
+                <span class="value">$249<small>/mo</small></span>
+            </div>
+            <div class="pricing-total">
+                Includes domain transfer, SSL, hosting setup, and 30 days of revisions.
+                Month-to-month &mdash; cancel anytime.
+            </div>
+        </div>
+
+        <a href="https://buy.stripe.com/eVq28r1kw2jfaxzatH2Nq00" target="_blank" rel="noopener noreferrer" class="btn-claim">Transfer this site to my domain &rarr;</a>
+
+        <div class="trust-badges">
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Secure checkout
+            </span>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                48hr setup
+            </span>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                Changes included
+            </span>
+        </div>
+
+        <p class="setup-note">
+            Setup typically completes within 48 hours. We handle the domain transfer, SSL certificate, and hosting configuration. Any adjustments to services, copy, images, or layout are included during the first 30 days at no extra charge.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <span class="footer-copy">&copy; 2026 Luxedmedia. All rights reserved.</span>
+        <a href="mailto:adayliak1@gmail.com" class="footer-link">adayliak1@gmail.com</a>
+    </footer>
+
+</div>
+
+<script>
+    function setView(mode) {
+        const shell = document.getElementById('browser-shell');
+        const btnDesktop = document.getElementById('btn-desktop');
+        const btnMobile  = document.getElementById('btn-mobile');
+
+        if (mode === 'mobile') {
+            shell.classList.add('mobile-view');
+            btnMobile.classList.add('active');
+            btnDesktop.classList.remove('active');
+        } else {
+            shell.classList.remove('mobile-view');
+            btnDesktop.classList.add('active');
+            btnMobile.classList.remove('active');
+        }
+    }
+</script>
+</body>
+</html>

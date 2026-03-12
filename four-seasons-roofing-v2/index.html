@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Safari & iOS Compatibility -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <!-- CORS & Security Headers for Cloudflare -->
+    <meta http-equiv="Permissions-Policy" content="payment=self">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'">
+    <title>Four Seasons Roofing — Premium Roofing Services in Cleveland, OH 44120<br>Serving Greater Cleveland Area</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0F172A;
+            --dark: #1E293B;
+            --slate: #334155;
+            --orange: #EA580C;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-400: #CBD5E1;
+            --gray-600: #475569;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            gap: 3rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--navy);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--slate);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        .nav-cta {
+            background: var(--orange);
+            color: var(--white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: #d94807;
+            transform: translateY(-1px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663423294723/jKYCTPUtAXeSksYhdahN6e/hero-roofing-background-PC39qQUmjKwxQcpJSpQraN.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #d94807;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(234, 88, 12, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--white);
+        }
+
+        /* ===== TRUST SECTION ===== */
+        .trust {
+            background: var(--off-white);
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-label {
+            font-size: 0.95rem;
+            color: var(--slate);
+            font-weight: 500;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--slate);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #1B263B 0%, #0056b3 50%, #E65100 100%);
+            border-radius: 0.5rem 0.5rem 0 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--orange);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-6px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .service-card p {
+            color: var(--slate);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--slate);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .service-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--orange);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ===== PORTFOLIO ===== */
+        .portfolio {
+            background: var(--off-white);
+            padding: 6rem 2rem;
+        }
+
+        .portfolio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-400) 100%);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--slate);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+            z-index: 1;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            background: var(--white);
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .portfolio-info p {
+            color: var(--slate);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== PROCESS ===== */
+        .process {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .process-step p {
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .certifications {
+            background: var(--off-white);
+            padding: 6rem 2rem;
+        }
+
+        .certifications-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            border-color: var(--orange);
+            box-shadow: 0 10px 25px rgba(234, 88, 12, 0.1);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .cert-item p {
+            font-size: 0.9rem;
+            color: var(--slate);
+        }
+
+        /* ===== TEAM ===== */
+        .team {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        /* ===== GUARANTEES ===== */
+        .guarantees {
+            background: var(--off-white);
+            padding: 6rem 2rem;
+        }
+
+        .guarantees-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .guarantee-item {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .guarantee-item:hover {
+            border-color: var(--orange);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .guarantee-icon {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .guarantee-item p {
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* ===== TRUST FACTORS ===== */
+        .trust-factors {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .trust-factors-container {
+            width: 100%;
+        }
+
+        .trust-factors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .trust-factor {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        .trust-factor:hover {
+            border-color: var(--orange);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .factor-number {
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: var(--orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .trust-factor h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .trust-factor p {
+            color: var(--slate);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background: var(--off-white);
+            padding: 6rem 2rem;
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--orange);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .star {
+            color: var(--orange);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-service {
+            font-size: 0.9rem;
+            color: var(--slate);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--white);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--navy);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--off-white);
+            color: var(--orange);
+        }
+
+        .faq-answer {
+            background: var(--off-white);
+            padding: 1.5rem;
+            color: var(--slate);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--orange);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background: var(--off-white);
+            padding: 6rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .about-content p {
+            color: var(--slate);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 2rem 0;
+            padding: 0;
+        }
+
+        .about-list li {
+            padding: 0.75rem 0;
+            color: var(--slate);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 500;
+        }
+
+        .about-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--orange);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            background: var(--navy);
+            color: var(--white);
+            padding: 6rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-header h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .contact-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .contact-item p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-cta {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-cta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--orange);
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Four Seasons Roofing</a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:2165550890" class="nav-cta">Call Now</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Roofing Solutions</h1>
+            <p>Expert craftsmanship for residential and commercial properties. Trusted by over 500 homeowners across Cleveland.</p>
+            <div class="hero-buttons">
+                <a href="tel:2165550890" class="btn btn-primary">Get Free Estimate</a>
+                <button class="btn btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">View Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-number">500+</div>
+                <div class="trust-label">Projects Completed</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">4.9</div>
+                <div class="trust-label">Average Rating</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">15+</div>
+                <div class="trust-label">Years Experience</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">24/7</div>
+                <div class="trust-label">Emergency Service</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive roofing solutions for every need</p>
+        </div>
+
+                <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>Roof Inspection</h3>
+                <p>Comprehensive roof assessment to identify damage and maintenance needs</p>
+                <ul class="service-features">
+                    <li>Detailed assessment</li>
+                    <li>Free estimates</li>
+                    <li>Early damage detection</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Roof Repair</h3>
+                <p>Quick repairs for leaks, damaged shingles, and other roofing issues</p>
+                <ul class="service-features">
+                    <li>Same-day response</li>
+                    <li>Insurance coordination</li>
+                    <li>Quality guaranteed</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>Roof Replacement</h3>
+                <p>Full roof installation with premium materials and extended warranty</p>
+                <ul class="service-features">
+                    <li>Premium materials</li>
+                    <li>Extended warranty</li>
+                    <li>Professional installation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3>Storm Damage</h3>
+                <p>Emergency response to storm damage and severe weather events</p>
+                <ul class="service-features">
+                    <li>Professional service</li>
+                    <li>Quality assured</li>
+                    <li>Customer focused</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>Gutter Services</h3>
+                <p>Professional gutter installation, repair, and maintenance</p>
+                <ul class="service-features">
+                    <li>Professional service</li>
+                    <li>Quality assured</li>
+                    <li>Customer focused</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">06</div>
+                <h3>Preventative Maintenance</h3>
+                <p>Regular inspections and maintenance to extend roof lifespan</p>
+                <ul class="service-features">
+                    <li>Seasonal checkups</li>
+                    <li>Extended lifespan</li>
+                    <li>Cost savings</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <div class="section-header">
+                <h2>Recent Projects</h2>
+                <p>See the quality of our work</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('./images/portfolio-1.png'); background-size: cover; background-position: center;"></div>
+                    <div class="portfolio-info">
+                        <h3>Complete Roof Replacement</h3>
+                        <p>Modern architectural shingles with premium underlayment</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('./images/portfolio-2.png'); background-size: cover; background-position: center;"></div>
+                    <div class="portfolio-info">
+                        <h3>Storm Damage Restoration</h3>
+                        <p>Emergency repair and full restoration project</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('./images/portfolio-3.png'); background-size: cover; background-position: center;"></div>
+                    <div class="portfolio-info">
+                        <h3>Gutter System Installation</h3>
+                        <p>Custom seamless gutters with leaf protection</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('./images/portfolio-4.png'); background-size: cover; background-position: center;"></div>
+                    <div class="portfolio-info">
+                        <h3>Commercial Roofing</h3>
+                        <p>Flat roof installation for retail property</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('./images/portfolio-5.png'); background-size: cover; background-position: center;"></div>
+                    <div class="portfolio-info">
+                        <h3>Roof Maintenance Program</h3>
+                        <p>Seasonal inspection and preventative care</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('./images/portfolio-6.png'); background-size: cover; background-position: center;"></div>
+                    <div class="portfolio-info">
+                        <h3>Insurance Claim Project</h3>
+                        <p>Full documentation and coordination</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+        <div class="section-header">
+            <h2>Our Process</h2>
+            <p>How we deliver exceptional results</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Free Consultation</h3>
+                <p>We discuss your roofing needs, assess your property, and provide a detailed estimate with no obligation.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Expert Assessment</h3>
+                <p>Our certified inspectors thoroughly evaluate your roof and provide recommendations for the best solution.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Professional Installation</h3>
+                <p>Our experienced team executes the work with precision, using premium materials and proven techniques.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Quality Inspection</h3>
+                <p>We conduct a final walkthrough to ensure every detail meets our high standards and your satisfaction.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h3>Ongoing Support</h3>
+                <p>We provide warranty coverage and maintenance support to keep your roof in peak condition for years.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WARRANTY & GUARANTEES -->
+    <section class="guarantees">
+        <div class="guarantees-container">
+            <div class="section-header">
+                <h2>Our Guarantees</h2>
+                <p>Peace of mind with every project</p>
+            </div>
+
+            <div class="guarantees-grid">
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">10</div>
+                    <h4>10-Year Workmanship Warranty</h4>
+                    <p>Complete coverage on all labor and installation. If something goes wrong, we make it right.</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">100</div>
+                    <h4>100% Satisfaction Guarantee</h4>
+                    <p>If you're not completely satisfied, we'll work until you are. Your happiness is our priority.</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">24</div>
+                    <h4>24-Hour Response Time</h4>
+                    <p>Emergency calls answered within 24 hours. We prioritize urgent situations.</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">0</div>
+                    <h4>Zero Hidden Fees</h4>
+                    <p>Transparent pricing from start to finish. What you see is what you pay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY HOMEOWNERS TRUST US -->
+    <section class="trust-factors">
+        <div class="trust-factors-container">
+            <div class="section-header">
+                <h2>Why Homeowners Trust Us</h2>
+                <p>The foundation of our reputation</p>
+            </div>
+
+            <div class="trust-factors-grid">
+                <div class="trust-factor">
+                    <div class="factor-number">1</div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Full licensing and insurance protection. Your home is protected on every project.</p>
+                </div>
+                <div class="trust-factor">
+                    <div class="factor-number">2</div>
+                    <h3>Transparent Communication</h3>
+                    <p>Regular updates, clear explanations, and honest recommendations. No surprises.</p>
+                </div>
+                <div class="trust-factor">
+                    <div class="factor-number">3</div>
+                    <h3>Premium Materials</h3>
+                    <p>We use only top-quality materials from trusted manufacturers. Your investment lasts.</p>
+                </div>
+                <div class="trust-factor">
+                    <div class="factor-number">4</div>
+                    <h3>Expert Craftsmanship</h3>
+                    <p>Trained professionals with years of experience. Every detail matters.</p>
+                </div>
+                <div class="trust-factor">
+                    <div class="factor-number">5</div>
+                    <h3>Insurance Claim Experts</h3>
+                    <p>We handle the entire claims process. No paperwork stress for you.</p>
+                </div>
+                <div class="trust-factor">
+                    <div class="factor-number">6</div>
+                    <h3>Local Reputation</h3>
+                    <p>Trusted by thousands of homeowners in the community. Our reputation is everything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663423294723/jKYCTPUtAXeSksYhdahN6e/hero-roofing-background-PC39qQUmjKwxQcpJSpQraN.webp" alt="Four Seasons Roofing Team">
+                </div>
+                <div class="about-content">
+                    <h2>Why Choose Four Seasons Roofing</h2>
+                    <p>With over 15 years of experience in the roofing industry, Four Seasons Roofing has built a reputation for excellence, reliability, and customer satisfaction. We take pride in every project we complete.</p>
+                    <p>Our commitment to quality craftsmanship, transparent pricing, and exceptional customer service sets us apart from other roofing contractors in the region.</p>
+                    <ul class="about-list">
+                        <li>Licensed and fully insured</li>
+                        <li>Transparent, upfront pricing</li>
+                        <li>No hidden fees or surprises</li>
+                        <li>Certified professional team</li>
+                        <li>10-year workmanship warranty</li>
+                        <li>100% satisfaction guarantee</li>
+                        <li>Same-day emergency response</li>
+                        <li>Free estimates and consultations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2>Customer Reviews</h2>
+                <p>Real feedback from homeowners we've served</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Our roof had severe storm damage and Four Seasons Roofing handled everything from inspection to final installation. They even worked directly with our insurance company which made the process much easier. The crew finished the job in one day and the roof looks amazing."</p>
+                    <p class="testimonial-author">Michael R.</p>
+                    <p class="testimonial-service">Homeowner • Storm Damage Repair</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Extremely professional team from start to finish. They showed up on time, explained the entire process clearly, and kept the property clean during the project. The new roof completely transformed the look of our house."</p>
+                    <p class="testimonial-author">Sarah L.</p>
+                    <p class="testimonial-service">Homeowner • Roof Replacement</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"We hired Four Seasons Roofing to replace the roof on our rental property and the experience was excellent. Communication was clear, the crew was efficient, and the property was spotless when they finished."</p>
+                    <p class="testimonial-author">Jeff T.</p>
+                    <p class="testimonial-service">Property Owner • Investment Property</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"I called them for gutter installation and a roof inspection before selling my home. They were extremely thorough and professional. The gutters look great and everything was installed perfectly."</p>
+                    <p class="testimonial-author">Emily W.</p>
+                    <p class="testimonial-service">Homeowner • Gutter Installation</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"After a hail storm we were worried about hidden damage. Four Seasons Roofing did a full inspection and helped us file the insurance claim. The replacement roof looks fantastic and the entire process was smooth."</p>
+                    <p class="testimonial-author">Robert M.</p>
+                    <p class="testimonial-service">Homeowner • Insurance Claim Assistance</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"From the first inspection to the final walkthrough everything was handled professionally. They explained our options clearly and the price was exactly what they quoted. The new roof looks amazing and our house looks brand new."</p>
+                    <p class="testimonial-author">Jerome L.</p>
+                    <p class="testimonial-service">Residential Client • Roof Installation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common roofing questions</p>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a typical roof replacement take?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Most residential roof replacements take 1-3 days depending on the size and complexity of your roof. We'll provide a detailed timeline during your consultation.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What warranty do you offer?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">We offer a 10-year workmanship warranty on all installations, plus manufacturer warranties on materials. Full details are provided in your contract.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you handle insurance claims?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Yes, we handle the complete insurance claim process including documentation, communication with your insurer, and coordination of the work.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are you available for emergency repairs?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Absolutely! We offer 24/7 emergency service for urgent roofing issues. Call us anytime and we'll prioritize your situation.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How much does a roof inspection cost?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Roof inspections are completely free for new customers. If you decide to move forward with work, we'll credit the inspection fee toward your project.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What roofing materials do you recommend?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">We work with premium materials from top manufacturers. During your consultation, we'll recommend options based on your budget, climate, and aesthetic preferences.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are you licensed and insured in Cleveland?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Yes. We are fully licensed, bonded, and carry comprehensive liability and workers' comp insurance to ensure you and your property are 100% protected throughout the project.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to protect your home? Contact us for a free estimate or emergency service.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p><a href="tel:2165550890">(216) 555-0890</a></p>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;"></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>Cleveland, OH 44120<br>Serving Greater Cleveland Area</p>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <h3>Request a Free Estimate</h3>
+                <a href="tel:2165550890" class="btn btn-primary" style="margin-top: 1rem;">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Four Seasons Roofing</h4>
+                    <p>Premium roofing solutions for residential and commercial properties. Licensed, insured, and backed by 15+ years of expertise.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Emergency Repairs</a></li>
+                        <li><a href="#services">Roof Replacement</a></li>
+                        <li><a href="#services">Gutter Services</a></li>
+                        <li><a href="#services">Inspections</a></li>
+                        <li><a href="#services">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#guarantees">Guarantees</a></li>
+                <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:2165550890">(216) 555-0890</a></li>
+                        <li>Cleveland, OH 44120<br>Serving Greater Cleveland Area</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Four Seasons Roofing. All rights reserved. Licensed & Insured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== SAFARI & CLOUDFLARE COMPATIBILITY =====
+        // Check if storage is available (handles Safari private mode and Cloudflare restrictions)
+        function isStorageAvailable(type) {
+            try {
+                const storage = window[type];
+                const x = '__test__';
+                storage.setItem(x, x);
+                storage.removeItem(x);
+                return true;
+            } catch(e) {
+                // Storage not available - likely Safari private mode or third-party restrictions
+                return false;
+            }
+        }
+
+        // Use sessionStorage if available, otherwise use in-memory storage
+        const hasSessionStorage = isStorageAvailable('sessionStorage');
+        const hasLocalStorage = isStorageAvailable('localStorage');
+
+        // Graceful fallback storage
+        const memoryStorage = {};
+        const appStorage = {
+            setItem: function(key, value) {
+                try {
+                    if (hasSessionStorage) {
+                        sessionStorage.setItem(key, value);
+                    } else if (hasLocalStorage) {
+                        localStorage.setItem(key, value);
+                    } else {
+                        memoryStorage[key] = value;
+                    }
+                } catch(e) {
+                    // Silent fail - use memory storage as fallback
+                    memoryStorage[key] = value;
+                }
+            },
+            getItem: function(key) {
+                try {
+                    if (hasSessionStorage) {
+                        return sessionStorage.getItem(key);
+                    } else if (hasLocalStorage) {
+                        return localStorage.getItem(key);
+                    } else {
+                        return memoryStorage[key] || null;
+                    }
+                } catch(e) {
+                    return memoryStorage[key] || null;
+                }
+            }
+        };
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const currentAnswer = this.nextElementSibling;
+                const isAlreadyOpen = currentAnswer.classList.contains('active');
+
+                // Close all other open answers
+                document.querySelectorAll('.faq-answer.active').forEach(answer => {
+                    if (answer !== currentAnswer) {
+                        answer.classList.remove('active');
+                        answer.previousElementSibling.classList.remove('active');
+                    }
+                });
+
+                // Toggle current answer
+                currentAnswer.classList.toggle('active');
+                this.classList.toggle('active');
+
+                // Try to save state (fails gracefully on Safari private mode)
+                try {
+                    const faqState = {};
+                    document.querySelectorAll('.faq-question').forEach((q, idx) => {
+                        faqState[`faq-${idx}`] = q.classList.contains('active');
+                    });
+                    appStorage.setItem('faqState', JSON.stringify(faqState));
+                } catch(e) {
+                    // Storage error - continue without persistence
+                }
+            });
+        });
+
+        // Restore FAQ state on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const savedState = appStorage.getItem('faqState');
+                if (savedState) {
+                    const state = JSON.parse(savedState);
+                    document.querySelectorAll('.faq-question').forEach((q, idx) => {
+                        if (state[`faq-${idx}`]) {
+                            q.classList.add('active');
+                            q.nextElementSibling.classList.add('active');
+                        }
+                    });
+                }
+            } catch(e) {
+                // State restoration failed - use default state
+            }
+        });
+
+        // ===== FORM HANDLING (Safari & Cloudflare compatible) =====
+        // Handle any contact forms with proper error handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                // Allow default form submission (POST to server)
+                // Don't prevent default unless we need custom handling
+            });
+        });
+    </script>
+</body>
+</html>
